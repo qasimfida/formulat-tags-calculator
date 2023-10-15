@@ -206,9 +206,9 @@ const TagInput = () => {
                     setAddingValue(''); 
                   }}
                 >
-                  {tag.name} 
+                  {tag.name}
                     {tag.type === 'value' && (
-                   tag.value
+                 <span className="ml-1" >({tag.value}) </span>
                   )} 
                    
                   {tag.type === 'value' && (
