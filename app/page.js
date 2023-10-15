@@ -206,7 +206,11 @@ const TagInput = () => {
                     setAddingValue(''); 
                   }}
                 >
-                  {tag.name}
+                  {tag.name} (
+                    {tag.type === 'value' && (
+                    tag.value
+                  )}
+                  ) 
                   {tag.type === 'value' && (
                     <span className='cursor-pointer ml-1' onClick={(e) => { 
                       e.stopPropagation(); 
@@ -242,7 +246,7 @@ const TagInput = () => {
             onClick={() => handleSuggestionClick(suggestion)}
           >
             <div className='font-bold'>{suggestion.name}</div>
-            <div className=''>{suggestion.description}</div>
+            <div className=''>{suggestion.description} ({suggestion.value})</div>
           </li>
         ))}
       </ul>
