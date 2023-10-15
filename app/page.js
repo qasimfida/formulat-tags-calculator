@@ -199,18 +199,18 @@ const TagInput = () => {
                 />
                 <div
                   key={index}
-                  className={`rounded cursor-pointer flex items-center ${tag.type === 'value' ? 'hover:bg-slate-100 bg-slate-200 p-2' : ''}`}
+                  className={`rounded min-w-max cursor-pointer flex items-center ${tag.type === 'value' ? 'hover:bg-slate-100 bg-slate-200 p-2' : ''}`}
                   onClick={() => { 
                     handleTagClick(index); 
                     setAddingIndex(-1); 
                     setAddingValue(''); 
                   }}
                 >
-                  {tag.name} (
+                  {tag.name} 
                     {tag.type === 'value' && (
-                    tag.value
-                  )}
-                  ) 
+                   tag.value
+                  )} 
+                   
                   {tag.type === 'value' && (
                     <span className='cursor-pointer ml-1' onClick={(e) => { 
                       e.stopPropagation(); 
